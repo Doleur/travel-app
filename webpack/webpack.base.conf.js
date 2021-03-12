@@ -1,15 +1,13 @@
-const path = require('path')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-
-
+const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const PATHS = {
   src: path.join(__dirname, '../src'),
   dist: path.join(__dirname, '../build'),
   assets: 'assets/'
-}
+};
 
 module.exports = {
   externals: {
@@ -23,7 +21,8 @@ module.exports = {
     path: PATHS.dist
   },
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.(js|jsx)$/,
         loader: 'babel-loader',
         exclude: /(node_modules|bower_components)/
@@ -60,15 +59,15 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          "style-loader",
+          'style-loader',
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
               modules: true
             }
           }
         ]
-      },
+      }
     ]
   },
   resolve: {
@@ -79,22 +78,22 @@ module.exports = {
     extensions: ['.js', '.jsx']
   },
   plugins: [
-
     new HtmlWebpackPlugin({
       hash: false,
       template: './src/index.html',
-      filename: 'index.html',
+      filename: 'index.html'
     }),
 
     new MiniCssExtractPlugin({
       filename: `style.css`
     }),
     new CopyWebpackPlugin({
-      patterns: [{
-        from: `${PATHS.src}/${PATHS.assets}img`,
-        to: `${PATHS.assets}img`
-      }, ]
-    }),
-
+      patterns: [
+        {
+          from: `${PATHS.src}/${PATHS.assets}img`,
+          to: `${PATHS.assets}img`
+        }
+      ]
+    })
   ]
-}
+};
