@@ -1,6 +1,8 @@
 import React from 'react';
 import * as S from './styled.component';
 
+import VideoYouTube from './../video-youtube/video-yuotube';
+
 const CountryPage = ({name}) => {
   return (
     <S.CountryPageWrapper>
@@ -9,7 +11,7 @@ const CountryPage = ({name}) => {
       <h4>Capital</h4>
       <p>Info about country</p>
       <div>Photo-slider</div>
-      <div>Video about country</div>
+      <VideoYouTube />
       <div>Map of country</div>
     </S.CountryPageWrapper>
   );

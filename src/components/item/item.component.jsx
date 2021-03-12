@@ -6,7 +6,7 @@ const Item = ({ name, history }) => {
   return (
     <S.ItemWrapper
       name={name}
-      onClick={() =>{
+      onClick={() => {
         history.push(`/${name}`);
       }}
     >
