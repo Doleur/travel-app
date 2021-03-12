@@ -12,6 +12,9 @@ module.exports = {
     'plugin:prettier/recommended'
   ],
   parserOptions: {
+    ecmaFeatures: {
+      jsx: true
+    },
     sourceType: 'module',
     ecmaVersion: 2018
   },
@@ -21,9 +24,6 @@ module.exports = {
     }
   },
   rules: {
-    'linebreak-style': ['error', 'unix'],
-    //'react-hooks/rules-of-hooks': 'error',
-    //'react-hooks/exhaustive-deps': 'warn',
-    "react/prop-types": 0
+    'linebreak-style': ['error', 'unix']
   }
 };
