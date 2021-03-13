@@ -3,7 +3,7 @@ import * as S from './styled.component';
 
 import VideoYouTube from './../video-youtube/video-yuotube';
 
-const CountryPage = ({name}) => {
+const CountryPage = ({ name }) => {
   return (
     <S.CountryPageWrapper>
       <h2>{name}</h2>

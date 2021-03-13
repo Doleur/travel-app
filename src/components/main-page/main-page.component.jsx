@@ -1,9 +1,10 @@
 import React from 'react';
 import * as S from './styled.component';
+import PropTypes from 'prop-types';
 
 import Item from './../item/item.component';
 
-const MainPage = () => {
+const MainPage = ({ searchValue }) => {
   const arr = [
     'Egypt',
     'France',
@@ -14,10 +15,18 @@ const MainPage = () => {
     'Spain',
     'Turkey'
   ];
-  const countries = arr.map((el) => {
-    return <Item key={el} name={el} />;
-  });
+  const countries = arr
+    .filter((country) =>
+      country.toLowerCase().includes(searchValue.toLowerCase())
+    )
+    .map((el) => {
+      return <Item key={el} name={el} />;
+    });
   return <S.MainPageWrapper>{countries}</S.MainPageWrapper>;
+};
+
+MainPage.propTypes = {
+  searchValue: PropTypes.string
 };
 
 export default MainPage;

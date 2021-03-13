@@ -12,3 +12,7 @@ export const Logo = styled.div`
   background-color: green;
   font-size: 3rem;
 `;
+
+export const Search = styled.input`
+  padding: 1rem;
+`;
