@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const WeatherWrapper = styled.div`
-
   width: 230px;
 `;
 

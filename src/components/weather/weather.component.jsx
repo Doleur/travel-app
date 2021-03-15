@@ -39,6 +39,7 @@ const Weather = ({ city, language }) => {
 
 Weather.propTypes = {
   city: PropTypes.object,
+
   language: PropTypes.string
 };
 

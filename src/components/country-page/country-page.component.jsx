@@ -24,6 +24,7 @@ const CountryPage = ({ countryId, language }) => {
     <S.CountryPageWrapper>
       {country.id && (
         <>
+          <Weather city={capital_name} language={language} />
           <h2>{name[language]}</h2>
           <S.Container>
             <S.ContainerImageHead>
