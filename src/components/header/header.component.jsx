@@ -12,12 +12,15 @@ const Header = ({
   updateLanguage
 }) => {
   let input = React.createRef();
+
   const handleChange = (event) => updateSearchValue(event.target.value);
+
   const handleSubmit = (event) => {
     updateSearchValue(searchValue);
     event.preventDefault();
     input.current.blur();
   };
+
   return (
     <S.HeaderWrapper>
       <Link to="/">

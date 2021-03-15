@@ -4,29 +4,22 @@ import PropTypes from 'prop-types';
 
 import Item from './../item/item.component';
 
-const MainPage = ({ searchValue }) => {
-  const arr = [
-    'Egypt',
-    'France',
-    'Greece',
-    'Italy',
-    'Malta',
-    'Portugal',
-    'Spain',
-    'Turkey'
-  ];
-  const countries = arr
+const MainPage = ({ searchValue, language, allCountries }) => {
+  const countries = allCountries
     .filter((country) =>
-      country.toLowerCase().includes(searchValue.toLowerCase())
+      country.name[language].toLowerCase().includes(searchValue.toLowerCase())
     )
-    .map((el) => {
-      return <Item key={el} name={el} />;
+    .map((country, i) => {
+      return <Item key={i} country={country} language={language} />;
     });
+
   return <S.MainPageWrapper>{countries}</S.MainPageWrapper>;
 };
 
 MainPage.propTypes = {
-  searchValue: PropTypes.string
+  searchValue: PropTypes.string,
+  language: PropTypes.string,
+  allCountries: PropTypes.array
 };
 
 export default MainPage;
