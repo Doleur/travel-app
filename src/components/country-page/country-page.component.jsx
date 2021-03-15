@@ -3,6 +3,7 @@ import * as S from './styled.component';
 import PropTypes from 'prop-types';
 import { getSpecificCountry } from '../../utilities/travel.service';
 import VideoYouTube from './../video-youtube/video-yuotube';
+import SightGallery from './../sight-gallery/sight-gallery.component';
 import Weather from '../weather/weather.component';
 import Clock from '../clock/clock.component';
 
@@ -28,6 +29,7 @@ const CountryPage = ({ countryId, language }) => {
           <h4>{capital_name[language]}</h4>
           <p>{description[language]}</p>
           <div>Photo-slider</div>
+          <SightGallery />
           <VideoYouTube />
           <div>Map of country</div>
         </>
