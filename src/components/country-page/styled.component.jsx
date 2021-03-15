@@ -11,4 +11,8 @@ export const CountryPageWrapper = styled.div`
   h2 {
     text-align: center;
   }
+  p {
+    font-family: 'Raleway', sans-serif;
+  }
 `;
+

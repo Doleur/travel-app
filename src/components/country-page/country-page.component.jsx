@@ -28,8 +28,10 @@ const CountryPage = ({ countryId, language }) => {
           <img src={photo_url} alt={name[language]} />
           <h4>{capital_name[language]}</h4>
           <p>{description[language]}</p>
-          <div>Photo-slider</div>
-          <SightGallery />
+          <SightGallery
+            attractions={Attractions}
+            language={language}
+            />
           <VideoYouTube />
           <div>Map of country</div>
         </>

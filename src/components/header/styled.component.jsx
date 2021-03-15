@@ -14,6 +14,7 @@ export const Logo = styled.div`
   height: 80px;
   border-radius: 25px;
   overflow: hidden;
+  border: 2px solid #2f349e;
   img {
     width: 100%;
     height: 100%;
@@ -27,7 +28,7 @@ export const Quote = styled.div`
 `;
 
 export const Search = styled.form`
-  position: relative;
+  display: flex;
   width: 300px;
   height: 42px;
   input {
@@ -45,7 +46,7 @@ export const Search = styled.form`
     border-radius: 3px;
     width: 40px;
     height: 100%;
-    background: #00ffff;
+    background: #d5e2e8;;
     cursor: pointer;
     &:before {
       content: url(../../assets/img/search.svg);
