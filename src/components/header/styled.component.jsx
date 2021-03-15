@@ -5,12 +5,25 @@ export const HeaderWrapper = styled.div`
   justify-content: space-around;
   align-items: center;
   padding: 1rem;
-  background-color: red;
+  background-color: #b9c3ea;
+  border-radius: 25px;
 `;
 
 export const Logo = styled.div`
-  background-color: green;
-  font-size: 3rem;
+  width: 80px;
+  height: 80px;
+  border-radius: 25px;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+`;
+
+export const Quote = styled.div`
+  font-size: 2rem;
+  width: 20%;
+  text-align: center;
 `;
 
 export const Search = styled.form`

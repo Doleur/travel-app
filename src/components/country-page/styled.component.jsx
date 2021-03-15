@@ -6,6 +6,9 @@ export const CountryPageWrapper = styled.div`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  background-color: yellow;
-  min-height: calc(100vh - 160px);
+  min-height: calc(100vh - 195px);
+  padding: 2rem;
+  h2 {
+    text-align: center;
+  }
 `;
