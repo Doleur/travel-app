@@ -12,9 +12,11 @@ const Item = ({ country, history, language }) => {
         history.push(`/countries/${id}`);
       }}
     >
-      <h2>{name[language]}</h2>
-      <h3>{capital_name[language]}</h3>
-      <img src={photo_url} alt={name[language]} />
+      <S.CountryImage src={photo_url} alt={name[language]} />
+      <S.CountryCopy>
+        <h2>{name[language]}</h2>
+        <h3>{capital_name[language]}</h3>
+      </S.CountryCopy>
     </S.ItemWrapper>
   );
 };
