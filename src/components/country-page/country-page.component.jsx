@@ -3,8 +3,8 @@ import * as S from './styled.component';
 import PropTypes from 'prop-types';
 import { getSpecificCountry } from '../../utilities/travel.service';
 import VideoYouTube from './../video-youtube/video-yuotube';
-
 import Weather from '../weather/weather.component';
+import Clock from '../clock/clock.component';
 
 const CountryPage = ({ countryId, language }) => {
   const [country, updateCountry] = useState({});
@@ -22,6 +22,7 @@ const CountryPage = ({ countryId, language }) => {
       {country.id && (
         <>
           <Weather city={capital_name} language={language} />
+          <Clock language={language} city={capital_name.en}/>
           <h2>{name[language]}</h2>
           <img src={photo_url} alt={name[language]} />
           <h4>{capital_name[language]}</h4>
