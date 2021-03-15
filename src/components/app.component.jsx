@@ -9,12 +9,16 @@ import CountryPage from './country-page/country-page.component';
 
 const App = () => {
   const [searchValue, updateSearchValue] = useState('');
+  // let language = 'en';
+  const [language, updateLanguage] = useState('en');
   return (
     <>
       <Router>
         <Header
           searchValue={searchValue}
           updateSearchValue={updateSearchValue}
+          language={language}
+          updateLanguage={updateLanguage}
         />
         <Route
           path="/"

@@ -13,6 +13,31 @@ export const Logo = styled.div`
   font-size: 3rem;
 `;
 
-export const Search = styled.input`
-  padding: 1rem;
+export const Search = styled.form`
+  position: relative;
+  width: 300px;
+  height: 42px;
+  input {
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    width: 260px;
+    height: 100%;
+    background: #f9f0da;
+    padding-left: 15px;
+  }
+  button {
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    width: 40px;
+    height: 100%;
+    background: #00ffff;
+    cursor: pointer;
+    &:before {
+      content: url(../../assets/img/search.svg);
+      font-size: 16px;
+      color: #f9f0da;
+    }
+  }
 `;
