@@ -15,5 +15,4 @@ export const ClockTime = styled.div`
 `;
 
 export const ClockDate = styled.div`
-
 `;
