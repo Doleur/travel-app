@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import logoTravels from './../../assets/img/logo-travel.jpg';
 import LanguageDropdown from './../language-dropdown/language-dropdown.component';
-import Button from 'react-bootstrap/Button';
+import { Button, Navbar, Nav, Form, FormControl } from 'react-bootstrap';
 import {
   searchTranslate,
   AuthenticationLabels
@@ -36,47 +36,56 @@ const Header = ({
   };
 
   return (
-    <S.HeaderWrapper>
-      <S.Logo>
-        <Link to="/">
-          <img src={logoTravels} alt="Logo"/>
-        </Link>
-      </S.Logo>
-      <div>
-        <S.Search onSubmit={handleSubmit}>
-          <input
-            ref={input}
-            type="search"
-            placeholder={searchTranslate[language]}
-            value={searchValue}
-            onChange={handleChange}
-            autoComplete="off"
-            autoFocus
-          />
-          <button type="submit" />
-        </S.Search>
-      </div>
-      <LanguageDropdown updateLanguage={updateLanguage} />
-      {!isUserLoggedIn && (
-        <>
-          <Button onClick={() => updateSignInOpened(true)}>
-            {AuthenticationLabels.sign_in[language]}
+    <S.HeaderWrapper expand="lg">
+      <Navbar.Brand>
+        <S.Logo>
+          <Link to="/">
+            <img src={logoTravels} alt="Logo" />
+          </Link>
+        </S.Logo>
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+          <Form inline onSubmit={handleSubmit}>
+            <FormControl
+              ref={input}
+              type="text"
+              placeholder={searchTranslate[language]}
+              alue={searchValue}
+              onChange={handleChange}
+              autoComplete="off"
+              autoFocus
+              className="mr-sm-2"
+            />
+            <Button variant="outline-success">Search</Button>
+          </Form>
+        </Nav>
+        <LanguageDropdown updateLanguage={updateLanguage} />
+        {!isUserLoggedIn && (
+          <div>
+            <S.AuthButton
+              variant="info"
+              onClick={() => updateSignInOpened(true)}
+            >
+              {AuthenticationLabels.sign_in[language]}
+            </S.AuthButton>
+            <S.AuthButton onClick={() => updateSignUpOpened(true)}>
+              {AuthenticationLabels.sign_up[language]}
+            </S.AuthButton>
+          </div>
+        )}
+        {isUserLoggedIn && (
+          <Button
+            onClick={() => {
+              localStorage.removeItem('accessToken');
+              updateIsUserLoggedIn(false);
+            }}
+          >
+            {AuthenticationLabels.logout[language]}
           </Button>
-          <Button onClick={() => updateSignUpOpened(true)}>
-            {AuthenticationLabels.sign_up[language]}
-          </Button>
-        </>
-      )}
-      {isUserLoggedIn && (
-        <Button
-          onClick={() => {
-            localStorage.removeItem('accessToken');
-            updateIsUserLoggedIn(false);
-          }}
-        >
-          {AuthenticationLabels.logout[language]}
-        </Button>
-      )}
+        )}
+      </Navbar.Collapse>
     </S.HeaderWrapper>
   );
 };

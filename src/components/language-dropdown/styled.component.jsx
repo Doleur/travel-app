@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import { Form } from 'react-bootstrap';
 
-export const LanguageDropdown = styled.select`
-  padding: 0.5rem;
-  border-radius: 5px;
-  background: #d5e2e8;
+export const LanguageDropdownWrapper = styled(Form.Group).attrs({
+  className: 'form-group'
+})`
+  margin: 0 10px 0 0;
 `;
 
 export const Language = styled.option`
