@@ -17,9 +17,9 @@ export const getWeather = (city, lang) => {
 };
 
 export const signIn = (params) => {
-  return http.post('/auth/signin', params);
+  return httpTravel.post('/auth/signin', params);
 };
 
 export const signUp = (params) => {
-  return http.post('/auth/signup', params);
+  return httpTravel.post('/auth/signup', params);
 };
