@@ -1,6 +1,8 @@
 import React from 'react';
 import YouTube from 'react-youtube';
 
+import './video-yuotube.scss';
+
 const VideoYouTube = () => {
   const opts = {
     height: '390',

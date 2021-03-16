@@ -1,14 +1,10 @@
 import styled from 'styled-components';
 
 export const WeatherWrapper = styled.div`
-  position: absolute;
-  top: 0;
-  left: -230px;
   width: 230px;
 `;
 
 export const WeatherCity = styled.div`
-  width: 230px;
   padding: 10px 0;
   margin: 0 auto;
   border: 5px solid #1697ca;
@@ -45,7 +41,6 @@ export const WindAndHumidity = styled.div`
 `;
 
 export const WeatherDescription = styled.div`
-  width: 230px;
   font-size: 20px;
   text-align: center;
   padding: 7px 0;

@@ -2,6 +2,8 @@ import React from 'react';
 import * as S from './styled.component';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+
+import logoTravels from './../../assets/img/logo-travel.jpg';
 import LanguageDropdown from './../language-dropdown/language-dropdown.component';
 import { searchTranslate } from '../../constants/constans';
 
@@ -23,9 +25,11 @@ const Header = ({
 
   return (
     <S.HeaderWrapper>
-      <Link to="/">
-        <S.Logo>logo</S.Logo>
-      </Link>
+      <S.Logo>
+        <Link to="/">
+          <img src={logoTravels} alt="Logo"/>
+        </Link>
+      </S.Logo>
       <div>
         <S.Search onSubmit={handleSubmit}>
           <input

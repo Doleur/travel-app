@@ -9,6 +9,8 @@ const Footer = () => {
       <S.AuthorWrapper>
         <a href="https://github.com/Alena-Zykava"> Alena-Zykava </a>
         <a href="https://github.com/aliakseibabich">aliakseibabich</a>
+      </S.AuthorWrapper>
+      <S.AuthorWrapper>
         <a href="https://github.com/AndryGinger">AndryGinger</a>
         <a href="https://github.com/doleur">doleur</a>
       </S.AuthorWrapper>
