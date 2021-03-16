@@ -16,3 +16,24 @@ export const CountryPageWrapper = styled.div`
   }
 `;
 
+export const Container = styled.div`
+  display: flex;
+  padding: 1rem;
+`;
+
+export const ContainerWeatherClock = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+  align-items: center;
+  justify-content: space-around;
+`;
+
+export const ContainerImageHead = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  img {
+    width: 100%;
+  }
+`;
