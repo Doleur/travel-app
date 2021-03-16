@@ -31,6 +31,7 @@ export const Search = styled.form`
   display: flex;
   width: 300px;
   height: 42px;
+
   input {
     border: none;
     outline: none;
@@ -40,6 +41,7 @@ export const Search = styled.form`
     background: #f9f0da;
     padding-left: 15px;
   }
+
   button {
     border: none;
     outline: none;
@@ -48,6 +50,7 @@ export const Search = styled.form`
     height: 100%;
     background: #d5e2e8;;
     cursor: pointer;
+
     &:before {
       content: url(../../assets/img/search.svg);
       font-size: 16px;
