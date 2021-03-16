@@ -6,7 +6,7 @@ import VideoYouTube from './../video-youtube/video-yuotube';
 import SightGallery from './../sight-gallery/sight-gallery.component';
 import Weather from '../weather/weather.component';
 import Clock from '../clock/clock.component';
-
+import Map from '../map/map.component';
 
 const CountryPage = ({ countryId, language }) => {
   const [country, updateCountry] = useState({});
@@ -41,7 +41,7 @@ const CountryPage = ({ countryId, language }) => {
             language={language}
             />
           <VideoYouTube />
-          <div>Map of country</div>
+          <Map countryName={country.name.en} capitalName={capital_name.en} />
         </>
       )}
     </S.CountryPageWrapper>
