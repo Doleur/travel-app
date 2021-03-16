@@ -6,7 +6,6 @@ import VideoYouTube from './../video-youtube/video-yuotube';
 import SightGallery from './../sight-gallery/sight-gallery.component';
 import Weather from '../weather/weather.component';
 import Clock from '../clock/clock.component';
-import { getSpecificCountry } from '../../utilities/travel.service';
 
 
 const CountryPage = ({ countryId, language }) => {
