@@ -5,7 +5,12 @@ import PropTypes from 'prop-types';
 
 import logoTravels from './../../assets/img/logo-travel.jpg';
 import LanguageDropdown from './../language-dropdown/language-dropdown.component';
-import { searchTranslate } from '../../constants/constans';
+import Button from 'react-bootstrap/Button';
+import {
+  searchTranslate,
+  AuthenticationLabels
+} from '../../constants/constans';
+import { useAuthentication } from '../contexts/AuthenticationContext';
 
 const Header = ({
   searchValue,
@@ -13,6 +18,13 @@ const Header = ({
   language,
   updateLanguage
 }) => {
+  const {
+    updateSignInOpened,
+    updateSignUpOpened,
+    isUserLoggedIn,
+    updateIsUserLoggedIn
+  } = useAuthentication();
+
   let input = React.createRef();
 
   const handleChange = (event) => updateSearchValue(event.target.value);
@@ -45,6 +57,26 @@ const Header = ({
         </S.Search>
       </div>
       <LanguageDropdown updateLanguage={updateLanguage} />
+      {!isUserLoggedIn && (
+        <>
+          <Button onClick={() => updateSignInOpened(true)}>
+            {AuthenticationLabels.sign_in[language]}
+          </Button>
+          <Button onClick={() => updateSignUpOpened(true)}>
+            {AuthenticationLabels.sign_up[language]}
+          </Button>
+        </>
+      )}
+      {isUserLoggedIn && (
+        <Button
+          onClick={() => {
+            localStorage.removeItem('accessToken');
+            updateIsUserLoggedIn(false);
+          }}
+        >
+          {AuthenticationLabels.logout[language]}
+        </Button>
+      )}
     </S.HeaderWrapper>
   );
 };

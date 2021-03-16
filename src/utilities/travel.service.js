@@ -15,3 +15,11 @@ export const getWeather = (city, lang) => {
     }&appid=8ed9ee4cdef421b6f099391b87ce13ae&units=metric`
   );
 };
+
+export const signIn = (params) => {
+  return http.post('/auth/signin', params);
+};
+
+export const signUp = (params) => {
+  return http.post('/auth/signup', params);
+};
