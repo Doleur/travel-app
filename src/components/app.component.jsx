@@ -6,6 +6,7 @@ import Header from './header/header.component';
 import Footer from './footer/footer.component';
 import MainPage from './main-page/main-page.component';
 import CountryPage from './country-page/country-page.component';
+import Authentication from './Authentication';
 import { AuthenticationProvider } from './contexts/AuthenticationContext';
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
             language={language}
             updateLanguage={updateLanguage}
           />
+          <Authentication language={language} />
           <Route
             path="/"
             render={() => (
