@@ -10,8 +10,11 @@ import Authentication from './Authentication';
 import { AuthenticationProvider } from './contexts/AuthenticationContext';
 
 const App = () => {
+  let loadLanguage = JSON.parse(localStorage.getItem('language'));
   const [searchValue, updateSearchValue] = useState('');
-  const [language, updateLanguage] = useState('en');
+  const [language, updateLanguage] = useState(
+    loadLanguage ? loadLanguage : 'en'
+  );
   const [allCountries, updateAllCountries] = useState([]);
 
   useEffect(() => {
@@ -19,6 +22,10 @@ const App = () => {
       updateAllCountries(response.data);
     });
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem('language', JSON.stringify(language));
+  }, [language]);
 
   return (
     <>
