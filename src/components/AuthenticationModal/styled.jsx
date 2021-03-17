@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 export const ModalWrapper = styled(Modal)`
   min-width: 400px;
-  height: 360px;
   background: #fff;
   position: absolute;
   top: 50%;
@@ -18,6 +17,12 @@ export const ModalWrapper = styled(Modal)`
     width: 100%;
     margin: 0;
     border-radius: 10px;
+  }
+
+  @media screen and (max-width: 400px) {
+    width: 100%;
+    height: 100%;
+    min-width: unset;
   }
 `;
 
