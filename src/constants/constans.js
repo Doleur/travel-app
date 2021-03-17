@@ -134,3 +134,20 @@ export const AuthenticationLabels = {
     by: 'Увядзіце Пароль'
   }
 };
+
+export const nameCurrency = {
+  Egypt: 'EGP',
+  France: 'EUR',
+  Italy: 'EUR',
+  Greece: 'EUR',
+  Spain: 'EUR',
+  Turkey: 'TRY',
+  Malta: 'EUR',
+  Portugal: 'EUR'
+};
+
+export const nameCurrencyTranslate = {
+  en: 'Local currency',
+  ru: 'Местная валюта',
+  by: 'Мясцовая валюта'
+}

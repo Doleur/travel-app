@@ -1,4 +1,4 @@
-import { httpTravel, httpWeather } from './http-common';
+import { httpTravel, httpWeather, httpCurrency } from './http-common';
 
 export const getAllCountries = () => {
   return httpTravel.get('/countries');
@@ -22,4 +22,8 @@ export const signIn = (params) => {
 
 export const signUp = (params) => {
   return httpTravel.post('/auth/signup', params);
+};
+
+export const getCurrency = (country) => {
+  return httpCurrency.get(`/629895552814e26a8f06b35f/latest/${country}`);
 };
