@@ -36,6 +36,7 @@ const Header = ({
   };
 
   return (
+<<<<<<< HEAD
     <S.HeaderWrapper expand="lg">
       <Navbar.Brand>
         <S.Logo>
@@ -86,6 +87,29 @@ const Header = ({
           </Button>
         )}
       </Navbar.Collapse>
+=======
+    <S.HeaderWrapper>
+      <S.Logo>
+        <Link to="/">
+          <img src={logoTravels} alt="Logo"/>
+        </Link>
+      </S.Logo>
+      <div>
+        <S.Search onSubmit={handleSubmit}>
+          <input
+            ref={input}
+            type="search"
+            placeholder={searchTranslate[language]}
+            value={searchValue}
+            onChange={handleChange}
+            autoComplete="off"
+            autoFocus
+          />
+          <button type="submit" />
+        </S.Search>
+      </div>
+      <LanguageDropdown updateLanguage={updateLanguage} language={language} />
+>>>>>>> 5496333... feat search for the capital
     </S.HeaderWrapper>
   );
 };

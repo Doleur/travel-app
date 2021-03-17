@@ -6671,7 +6671,11 @@ prop-types-extra@^1.1.0:
     warning "^4.0.0"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 prop-types@15.7.2, prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.2, prop-types@^15.6.x, prop-types@^15.7.2:
+=======
+prop-types@15.7.2, prop-types@^15.5.8, prop-types@^15.6.2, prop-types@^15.6.x, prop-types@^15.7.2:
+>>>>>>> 5496333... feat search for the capital
 =======
 prop-types@15.7.2, prop-types@^15.5.8, prop-types@^15.6.2, prop-types@^15.6.x, prop-types@^15.7.2:
 >>>>>>> 5496333... feat search for the capital
@@ -6898,8 +6902,11 @@ react-leaflet@^3.1.0:
     "@react-leaflet/core" "^1.0.2"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 react-lifecycles-compat@^3.0.0, react-lifecycles-compat@^3.0.4:
 =======
+=======
+>>>>>>> 5496333... feat search for the capital
 react-lifecycles-compat@^3.0.4:
 >>>>>>> 5496333... feat search for the capital
   version "3.0.4"
