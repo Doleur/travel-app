@@ -25,7 +25,7 @@ export const signUp = (params) => {
 };
 
 export const getCurrency = (country) => {
-  return httpCurrency.get(`/629895552814e26a8f06b35f/latest/${country}`);
+  return httpCurrency.get(`/6f2499b6a177b07cbe98f84f/latest/${country}`);
 };
 
 export const getCurrentUser = (accessToken) => {
