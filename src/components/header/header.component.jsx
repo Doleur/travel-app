@@ -12,6 +12,8 @@ import PropTypes from 'prop-types';
 
 import * as S from './styled.component';
 
+import { useLocation } from 'react-router-dom';
+
 const Header = ({
   searchValue,
   updateSearchValue,
@@ -34,6 +36,7 @@ const Header = ({
     udpateIsMobileOrTablet(window.innerWidth <= 991);
 
   let input = React.createRef();
+  const location = useLocation();
 
   const handleChange = (event) => updateSearchValue(event.target.value);
 
@@ -85,21 +88,23 @@ const Header = ({
       </S.MenuWrapper>
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Form inline onSubmit={handleSubmit}>
-            <FormControl
-              ref={input}
-              type="text"
-              placeholder={searchTranslate[language]}
-              value={searchValue}
-              onChange={handleChange}
-              autoComplete="off"
-              autoFocus
-              className="mr-sm-2"
-            />
-            <S.SearchButton variant="outline-success">
-              {searchTranslate[language]}
-            </S.SearchButton>
-          </Form>
+          {location.pathname === '/' && (
+            <Form inline onSubmit={handleSubmit}>
+              <FormControl
+                ref={input}
+                type="text"
+                placeholder={searchTranslate[language]}
+                value={searchValue}
+                onChange={handleChange}
+                autoComplete="off"
+                autoFocus
+                className="mr-sm-2"
+              />
+              <S.SearchButton variant="outline-success">
+                {searchTranslate[language]}
+              </S.SearchButton>
+            </Form>
+          )}
         </Nav>
         <LanguageDropdown updateLanguage={updateLanguage} language={language} />
         {isMobileOrTablet && (
