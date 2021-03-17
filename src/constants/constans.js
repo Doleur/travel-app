@@ -150,4 +150,4 @@ export const nameCurrencyTranslate = {
   en: 'Local currency',
   ru: 'Местная валюта',
   by: 'Мясцовая валюта'
-}
+};
