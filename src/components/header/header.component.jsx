@@ -52,7 +52,7 @@ const Header = ({
               ref={input}
               type="text"
               placeholder={searchTranslate[language]}
-              alue={searchValue}
+              value={searchValue}
               onChange={handleChange}
               autoComplete="off"
               autoFocus
@@ -61,7 +61,7 @@ const Header = ({
             <Button variant="outline-success">Search</Button>
           </Form>
         </Nav>
-        <LanguageDropdown updateLanguage={updateLanguage} />
+        <LanguageDropdown updateLanguage={updateLanguage} language={language} />
         {!isUserLoggedIn && (
           <div>
             <S.AuthButton

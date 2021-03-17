@@ -1,14 +1,14 @@
 import React from 'react';
 import { Form } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-
 import * as S from './styled.component';
 
-const LanguageDropdown = ({ updateLanguage }) => {
+const LanguageDropdown = ({ updateLanguage, language }) => {
   return (
     <S.LanguageDropdownWrapper>
       <Form.Control
         as="select"
+        value={language}
         onChange={(event) => updateLanguage(event.target.value)}
       >
         <S.Language value="en">English</S.Language>
@@ -20,7 +20,8 @@ const LanguageDropdown = ({ updateLanguage }) => {
 };
 
 LanguageDropdown.propTypes = {
-  updateLanguage: PropTypes.func
+  updateLanguage: PropTypes.func,
+  language: PropTypes.string
 };
 
 export default LanguageDropdown;
