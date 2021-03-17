@@ -5,6 +5,10 @@ export const LanguageDropdownWrapper = styled(Form.Group).attrs({
   className: 'form-group'
 })`
   margin: 0 10px 0 0;
+
+  @media screen and (max-width: 991px) {
+    margin: 0;
+  }
 `;
 
 export const Language = styled.option`

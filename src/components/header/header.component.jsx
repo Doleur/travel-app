@@ -1,16 +1,16 @@
-import React from 'react';
-import * as S from './styled.component';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-
 import logoTravels from './../../assets/img/logo-travel.jpg';
 import LanguageDropdown from './../language-dropdown/language-dropdown.component';
-import { Button, Navbar, Nav, Form, FormControl } from 'react-bootstrap';
+import { Navbar, Nav, Form, FormControl } from 'react-bootstrap';
 import {
   searchTranslate,
   AuthenticationLabels
 } from '../../constants/constans';
 import { useAuthentication } from '../contexts/AuthenticationContext';
+import PropTypes from 'prop-types';
+
+import * as S from './styled.component';
 
 const Header = ({
   searchValue,
@@ -21,9 +21,17 @@ const Header = ({
   const {
     updateSignInOpened,
     updateSignUpOpened,
-    isUserLoggedIn,
-    updateIsUserLoggedIn
+    currentUser,
+    updateCurrentUser,
+    userFetched
   } = useAuthentication();
+
+  const [isMobileOrTablet, udpateIsMobileOrTablet] = useState(
+    window.innerWidth <= 991
+  );
+
+  const updateMediaQuery = () =>
+    udpateIsMobileOrTablet(window.innerWidth <= 991);
 
   let input = React.createRef();
 
@@ -35,6 +43,33 @@ const Header = ({
     input.current.blur();
   };
 
+  const UserSection = () => (
+    <S.UserSection>
+      <div>
+        <S.Avatar src={currentUser.photo_url} roundedCircle />
+        <S.Username>{currentUser.username}</S.Username>
+      </div>
+      {!isMobileOrTablet && (
+        <S.AuthButton
+          onClick={() => {
+            localStorage.removeItem('accessToken');
+            updateCurrentUser(null);
+          }}
+        >
+          {AuthenticationLabels.logout[language]}
+        </S.AuthButton>
+      )}
+    </S.UserSection>
+  );
+
+  useEffect(() => {
+    window.addEventListener('resize', updateMediaQuery);
+
+    return () => {
+      window.removeEventListener('resize', updateMediaQuery);
+    };
+  }, []);
+
   return (
     <S.HeaderWrapper expand="lg">
       <Navbar.Brand>
@@ -44,7 +79,10 @@ const Header = ({
           </Link>
         </S.Logo>
       </Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <S.MenuWrapper>
+        {userFetched && currentUser && isMobileOrTablet && UserSection()}
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      </S.MenuWrapper>
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
           <Form inline onSubmit={handleSubmit}>
@@ -58,11 +96,24 @@ const Header = ({
               autoFocus
               className="mr-sm-2"
             />
-            <Button variant="outline-success">Search</Button>
+            <S.SearchButton variant="outline-success">
+              {searchTranslate[language]}
+            </S.SearchButton>
           </Form>
         </Nav>
         <LanguageDropdown updateLanguage={updateLanguage} language={language} />
-        {!isUserLoggedIn && (
+        {isMobileOrTablet && (
+          <S.AuthButton
+            logout="true"
+            onClick={() => {
+              localStorage.removeItem('accessToken');
+              updateCurrentUser(null);
+            }}
+          >
+            {AuthenticationLabels.logout[language]}
+          </S.AuthButton>
+        )}
+        {userFetched && !currentUser && (
           <div>
             <S.AuthButton
               variant="info"
@@ -75,16 +126,7 @@ const Header = ({
             </S.AuthButton>
           </div>
         )}
-        {isUserLoggedIn && (
-          <Button
-            onClick={() => {
-              localStorage.removeItem('accessToken');
-              updateIsUserLoggedIn(false);
-            }}
-          >
-            {AuthenticationLabels.logout[language]}
-          </Button>
-        )}
+        {userFetched && currentUser && !isMobileOrTablet && UserSection()}
       </Navbar.Collapse>
     </S.HeaderWrapper>
   );
