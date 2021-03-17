@@ -14,8 +14,8 @@ const Item = ({ country, history, language }) => {
     >
       <S.CountryImage src={photo_url} alt={name[language]} />
       <S.CountryCopy>
-        <h2>{name[language]}</h2>
-        <h3>{capital_name[language]}</h3>
+        <h4>{name[language]}</h4>
+        <h5>{capital_name[language]}</h5>
       </S.CountryCopy>
     </S.ItemWrapper>
   );

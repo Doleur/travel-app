@@ -1,8 +1,8 @@
 import React from 'react';
-import * as S from './styled.component';
+import Item from './../item/item.component';
 import PropTypes from 'prop-types';
 
-import Item from './../item/item.component';
+import * as S from './styled.component';
 
 const MainPage = ({ searchValue, language, allCountries }) => {
   const countries = allCountries
