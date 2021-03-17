@@ -8,7 +8,8 @@ export const CountryPageWrapper = styled.div`
   flex-direction: column;
   min-height: calc(100vh - 195px);
   padding: 2rem;
-  h2, h4 {
+  h2,
+  h4 {
     text-align: center;
   }
   p {
@@ -19,6 +20,9 @@ export const CountryPageWrapper = styled.div`
 export const Container = styled.div`
   display: flex;
   padding: 1rem;
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+  }
 `;
 
 export const ContainerWidget = styled.div`
@@ -35,5 +39,6 @@ export const ContainerImageHead = styled.div`
   width: 100%;
   img {
     width: 100%;
+    margin-bottom: 10px;
   }
 `;
