@@ -8,7 +8,7 @@ export const CountryPageWrapper = styled.div`
   flex-direction: column;
   min-height: calc(100vh - 195px);
   padding: 2rem;
-  h2 {
+  h2, h4 {
     text-align: center;
   }
   p {
@@ -21,7 +21,7 @@ export const Container = styled.div`
   padding: 1rem;
 `;
 
-export const ContainerWeatherClock = styled.div`
+export const ContainerWidget = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 1rem;

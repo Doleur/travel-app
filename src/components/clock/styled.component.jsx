@@ -5,7 +5,6 @@ export const ClockWrapper = styled.div`
   top: 0;
   right: -230px;
   width: 230px;
-  border: 2px solid #2f349e;
   text-align: center;
 `;
 

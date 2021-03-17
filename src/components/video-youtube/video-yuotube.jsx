@@ -3,7 +3,7 @@ import YouTube from 'react-youtube';
 
 import './video-yuotube.scss';
 
-const VideoYouTube = () => {
+const VideoYouTube = ({videoId}) => {
   const opts = {
     height: '390',
     width: '640',
@@ -13,8 +13,8 @@ const VideoYouTube = () => {
   };
   const onReady = (event) => {
     event.target.pauseVideo();
-  }
-  return <YouTube videoId="2GV8vp0Zm0M" opts={opts} onReady={onReady} />;
+  };
+  return <YouTube videoId={videoId} opts={opts} onReady={onReady} />;
 };
 
 export default VideoYouTube;

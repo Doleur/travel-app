@@ -13,3 +13,10 @@ export const httpWeather = axios.create({
     'Content-type': 'application/json'
   }
 });
+
+export const httpCurrency = axios.create({
+  baseURL: 'https://v6.exchangerate-api.com/v6',
+  headers: {
+    'Content-type': 'application/json'
+  }
+});
