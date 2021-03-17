@@ -34,8 +34,8 @@ const Map = (props) => {
       style={MapStyle}
     >
       <TileLayer
-        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution='&copy; <a href="https://carto.com/">carto.com</a> contributors'
+        url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png"
       />
       <Marker position={capital}>
         <Popup>{capitalName}</Popup>
