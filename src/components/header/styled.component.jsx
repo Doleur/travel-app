@@ -59,10 +59,6 @@ export const MenuWrapper = styled.div`
   align-items: center;
 `;
 
-// export const CollapseWrapper = styled(MenuWrapper)`
-//   margin-top: 20px;
-// `;
-
 export const Avatar = styled(Image)`
   width: 50px;
   height: 50px;
