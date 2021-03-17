@@ -71,6 +71,12 @@ export const Avatar = styled(Image)`
   }
 `;
 
+export const AuthSection = styled.div`
+  @media screen and (max-width: 991px) {
+    margin-top: 10px;
+  }
+`;
+
 export const Username = styled.span`
   font-size: 20px;
 

@@ -107,7 +107,7 @@ const Header = ({
           )}
         </Nav>
         <LanguageDropdown updateLanguage={updateLanguage} language={language} />
-        {isMobileOrTablet && (
+        {userFetched && currentUser && isMobileOrTablet && (
           <S.AuthButton
             logout="true"
             onClick={() => {
@@ -119,7 +119,7 @@ const Header = ({
           </S.AuthButton>
         )}
         {userFetched && !currentUser && (
-          <div>
+          <S.AuthSection>
             <S.AuthButton
               variant="info"
               onClick={() => updateSignInOpened(true)}
@@ -129,7 +129,7 @@ const Header = ({
             <S.AuthButton onClick={() => updateSignUpOpened(true)}>
               {AuthenticationLabels.sign_up[language]}
             </S.AuthButton>
-          </div>
+          </S.AuthSection>
         )}
         {userFetched && currentUser && !isMobileOrTablet && UserSection()}
       </Navbar.Collapse>

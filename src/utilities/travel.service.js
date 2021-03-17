@@ -33,3 +33,10 @@ export const getCurrentUser = (accessToken) => {
     headers: { 'x-access-token': accessToken }
   });
 };
+
+const wakeUpHeroku = () => {
+  getAllCountries();
+  setTimeout(wakeUpHeroku, 1740000);
+};
+
+wakeUpHeroku();
