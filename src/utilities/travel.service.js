@@ -27,3 +27,9 @@ export const signUp = (params) => {
 export const getCurrency = (country) => {
   return httpCurrency.get(`/629895552814e26a8f06b35f/latest/${country}`);
 };
+
+export const getCurrentUser = (accessToken) => {
+  return httpTravel.get('/auth/user', {
+    headers: { 'x-access-token': accessToken }
+  });
+};
