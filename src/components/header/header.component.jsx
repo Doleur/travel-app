@@ -12,6 +12,8 @@ import {
 } from '../../constants/constans';
 import { useAuthentication } from '../contexts/AuthenticationContext';
 
+import { useLocation } from 'react-router-dom';
+
 const Header = ({
   searchValue,
   updateSearchValue,
@@ -35,6 +37,7 @@ const Header = ({
     input.current.blur();
   };
 
+  const location = useLocation();
   return (
     <S.HeaderWrapper expand="lg">
       <Navbar.Brand>
@@ -47,19 +50,21 @@ const Header = ({
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Form inline onSubmit={handleSubmit}>
-            <FormControl
-              ref={input}
-              type="text"
-              placeholder={searchTranslate[language]}
-              value={searchValue}
-              onChange={handleChange}
-              autoComplete="off"
-              autoFocus
-              className="mr-sm-2"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
+          {location.pathname === '/' && (
+            <Form inline onSubmit={handleSubmit}>
+              <FormControl
+                ref={input}
+                type="text"
+                placeholder={searchTranslate[language]}
+                value={searchValue}
+                onChange={handleChange}
+                autoComplete="off"
+                autoFocus
+                className="mr-sm-2"
+              />
+              <Button variant="outline-success">Search</Button>
+            </Form>
+          )}
         </Nav>
         <LanguageDropdown updateLanguage={updateLanguage} language={language} />
         {!isUserLoggedIn && (

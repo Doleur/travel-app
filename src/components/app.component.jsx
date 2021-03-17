@@ -9,6 +9,8 @@ import CountryPage from './country-page/country-page.component';
 import Authentication from './Authentication';
 import { AuthenticationProvider } from './contexts/AuthenticationContext';
 
+
+
 const App = () => {
   let loadLanguage = JSON.parse(localStorage.getItem('language'));
   const [searchValue, updateSearchValue] = useState('');
