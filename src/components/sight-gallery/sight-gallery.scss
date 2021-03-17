@@ -1,6 +1,7 @@
 .image-gallery-content .image-gallery-slide .image-gallery-image {
   height: 100%;
   object-fit: cover;
+  max-height: none;
 }
 .image-gallery-slide.center {
   display: flex;
@@ -18,3 +19,12 @@
     width: 100%;
   }
 }
+
+
+@media screen and (max-width: 767px) {
+  .image-gallery-slide .image-gallery-description {
+    height: 80px;
+    overflow-y: scroll;
+  }
+}
+
