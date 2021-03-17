@@ -1,7 +1,7 @@
 import React from 'react';
 import Item from './../item/item.component';
 import PropTypes from 'prop-types';
-
+import { Spinner } from 'react-bootstrap';
 import * as S from './styled.component';
 
 const MainPage = ({ searchValue, language, allCountries }) => {
@@ -19,7 +19,17 @@ const MainPage = ({ searchValue, language, allCountries }) => {
       return <Item key={i} country={country} language={language} />;
     });
 
-  return <S.MainPageWrapper>{countries}</S.MainPageWrapper>;
+  return (
+    <S.MainPageWrapper>
+      {allCountries ? (
+        countries
+      ) : (
+        <Spinner animation="border" role="status">
+          <span className="sr-only">Loading...</span>
+        </Spinner>
+      )}
+    </S.MainPageWrapper>
+  );
 };
 
 MainPage.propTypes = {

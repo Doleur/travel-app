@@ -8,6 +8,7 @@ import Weather from '../weather/weather.component';
 import Clock from '../clock/clock.component';
 import Map from '../map/map.component';
 import Currency from './../currency/currency.component';
+import { Spinner } from 'react-bootstrap';
 
 const CountryPage = ({ countryId, language }) => {
   const [country, updateCountry] = useState({});
@@ -48,6 +49,11 @@ const CountryPage = ({ countryId, language }) => {
           <VideoYouTube videoId={video_id} />
           <Map countryName={country.name.en} capitalName={capital_name.en} />
         </>
+      )}
+      {!country.id && (
+        <Spinner animation="border" role="status">
+          <span className="sr-only">Loading...</span>
+        </Spinner>
       )}
     </S.CountryPageWrapper>
   );
