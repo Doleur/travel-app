@@ -9,8 +9,11 @@ import MainPage from './main-page/main-page.component';
 import CountryPage from './country-page/country-page.component';
 
 const App = () => {
+  let loadLanguage = JSON.parse(localStorage.getItem('language'));
   const [searchValue, updateSearchValue] = useState('');
-  const [language, updateLanguage] = useState('en');
+  const [language, updateLanguage] = useState(
+    loadLanguage ? loadLanguage : 'en'
+  );
   const [allCountries, updateAllCountries] = useState([]);
 
   useEffect(() => {
@@ -18,6 +21,10 @@ const App = () => {
       updateAllCountries(response.data);
     });
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem('language', JSON.stringify(language));
+  }, [language]);
 
   return (
     <>

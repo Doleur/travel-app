@@ -6,8 +6,14 @@ import Item from './../item/item.component';
 
 const MainPage = ({ searchValue, language, allCountries }) => {
   const countries = allCountries
-    .filter((country) =>
-      country.name[language].toLowerCase().includes(searchValue.toLowerCase())
+    .filter(
+      (country) =>
+        country.name[language]
+          .toLowerCase()
+          .includes(searchValue.toLowerCase()) ||
+        country.capital_name[language]
+          .toLowerCase()
+          .includes(searchValue.toLowerCase())
     )
     .map((country, i) => {
       return <Item key={i} country={country} language={language} />;

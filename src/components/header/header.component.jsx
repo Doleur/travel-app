@@ -44,7 +44,7 @@ const Header = ({
           <button type="submit" />
         </S.Search>
       </div>
-      <LanguageDropdown updateLanguage={updateLanguage} />
+      <LanguageDropdown updateLanguage={updateLanguage} language={language} />
     </S.HeaderWrapper>
   );
 };

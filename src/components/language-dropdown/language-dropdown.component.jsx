@@ -2,9 +2,10 @@ import React from 'react';
 import * as S from './styled.component';
 import PropTypes from 'prop-types';
 
-const LanguageDropdown = ({ updateLanguage }) => {
+const LanguageDropdown = ({ updateLanguage, language }) => {
   return (
     <S.LanguageDropdown
+      value={language}
       onChange={(event) => updateLanguage(event.target.value)}
     >
       <S.Language value="en">English</S.Language>
@@ -15,7 +16,8 @@ const LanguageDropdown = ({ updateLanguage }) => {
 };
 
 LanguageDropdown.propTypes = {
-  updateLanguage: PropTypes.func
+  updateLanguage: PropTypes.func,
+  language: PropTypes.string
 };
 
 export default LanguageDropdown;
