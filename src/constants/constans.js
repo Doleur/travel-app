@@ -1,7 +1,7 @@
 export const searchTranslate = {
-  en: 'search',
-  ru: 'поиск',
-  by: 'пошук'
+  en: 'Search',
+  ru: 'Поиск',
+  by: 'Пошук'
 };
 
 export const weatherTranslate = {
